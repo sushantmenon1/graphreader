@@ -76,7 +76,9 @@ class DocumentGraph:
             for other_k in self.key_elements:
                 other_document = ". ".join(
                     [i["facts"] for i in self.key_elements[other_k]])
-                if k != other_k and (k in other_document):
+                self_documents = ". ".join(
+                    [i["facts"] for i in self.key_elements[k]])
+                if k != other_k and (k in other_document) and (other_k in self_documents):
                     self.graph.add_edge(k, other_k)
 
     def get_graph(self):
