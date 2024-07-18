@@ -37,7 +37,7 @@ class GraphReader():
     def get_response(self, query: str):
         primary_assistant_prompt = get_primary_assistant_prompt()
         tools = [search_tool, read_chunk,
-                 stop_and_read_neighbor, get_node_data]
+                 stop_and_read_neighbor, get_node_data, write_to_notes, read_notes]
         llm = ChatOpenAI(model="gpt-3.5-turbo",
                          temperature=1, openai_api_key=os.getenv('gpt_api_key'))
         part_1_assistant_runnable = primary_assistant_prompt | llm.bind_tools(

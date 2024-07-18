@@ -89,3 +89,29 @@ def get_node_data(node_name: str) -> List[dict]:
     """
     graph = nx.read_gml("graph.gml")
     return graph.nodes()[node_name]['data']
+
+
+@tool
+def write_to_notes(text: str):
+    """
+    Appends the given text to a file named 'text.txt'.
+
+    Args:
+        text (str): The text to be appended to the file.
+    """
+    with open("text.txt", "a") as myfile:
+        myfile.write(text)
+
+
+@tool
+def read_notes():
+    """
+    Reads the contents of the file 'test.txt'.
+
+    Returns:
+        str: The contents of the file.
+    """
+    with open("text.txt", "a") as myfile:
+        text = myfile.read()
+
+    return text
