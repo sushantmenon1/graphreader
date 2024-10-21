@@ -1,10 +1,11 @@
 
 from sentence_transformers import SentenceTransformer
+import os
 from pinecone import Pinecone, ServerlessSpec
 import time
 from tqdm import tqdm
-from .tools_utils import *
-from .Text_encoder import Text_Encoder
+from tools_utils import *
+from Text_encoder import Text_Encoder
 
 class Pinecone_client:
     def __init__(self,**kwargs):

@@ -1,1 +1,4 @@
-from .graphreader import GraphReader
+import nltk
+
+
+nltk.download("wordnet")
